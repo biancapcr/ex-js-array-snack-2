@@ -1,10 +1,13 @@
 // Creare un array (authors) che contiene gli autori dei libri
-
-
+const authors = books.map((book) => book.author);
 
 // Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni
-
-
+const areAuthorsAdults = authors.every((author) => author.age >= 18);
 
 // Ordina l’array authors in base all’età, senza creare un nuovo array.
-(se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+// (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+authors.sort((a, b) => {
+  return areAuthorsAdults
+    ? a.age - b.age // crescente
+    : b.age - a.age; // decrescente
+});
